@@ -1,4 +1,4 @@
-# Ecoleta Server
+# Ecoleta API Server
 
 ## Stack
 
