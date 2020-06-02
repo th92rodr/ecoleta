@@ -2,8 +2,8 @@
 
 ## Stack
 
-- Node.js / Express
-- SQLite
+- `Node.js` / `Express`
+- `SQLite`
 
 ## Run Application
 
