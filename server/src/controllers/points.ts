@@ -18,7 +18,7 @@ class PointsController {
       .distinct()
       .select('points.*');
 
-    return res.status(200).json({ points });
+    return res.status(200).json(points);
   }
 
   async show(req: Request, res: Response) {
@@ -35,7 +35,6 @@ class PointsController {
      *  JOIN point_items ON items.id = point_items.item_id
      *  WHERE point_items.point_id = {id}
      */
-
     const items = await knex('items')
       .join('point_items', 'item.id', '=', 'point_items.item_id')
       .where('point_items.point_id', id)
