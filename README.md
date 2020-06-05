@@ -10,6 +10,7 @@ This project was developed during the Next Level Week offered by [Rocketseat](ht
 
 - API Server: `Node.js` / `Express`
 - SPA App (Web Frontend): `React.js`
+- Mobile App: `React Native`
 - Database: `SQLite`
 
 ## How To Run
@@ -60,6 +61,26 @@ npm i
 - Start app:
 
 The app will be running on port `3000`.
+
+```
+npm start
+```
+
+### Mobile App
+
+- Go to `mobile` directory:
+
+```
+cd mobile
+```
+
+- Install project dependencies:
+
+```
+npm i
+```
+
+- Start app:
 
 ```
 npm start
