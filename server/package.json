@@ -1,6 +1,9 @@
 {
   "name": "ecoleta_server",
   "version": "1.0.0",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
+  "keywords": [],
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,9 +13,6 @@
     "format": "prettier --config .prettierrc.js --write '**/*.(js|ts)'",
     "lint": "eslint '**/*.(js|ts)'"
   },
-  "keywords": [],
-  "author": "Thiago Rodrigues",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
