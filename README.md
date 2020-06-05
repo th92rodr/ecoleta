@@ -45,3 +45,22 @@ npm run dev
 
 ### SPA App (Web Frontend)
 
+- Go to `web` directory:
+
+```
+cd web
+```
+
+- Install project dependencies:
+
+```
+npm i
+```
+
+- Start app:
+
+The app will be running on port `3000`.
+
+```
+npm start
+```
