@@ -29,10 +29,8 @@ const CreatePoint = () => {
   const [UFs, setUFs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
 
-  const [initialPosition, setInitialPosition] = useState<[number, number]>([
-    0,
-    0,
-  ]);
+  // prettier-ignore
+  const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -43,10 +41,8 @@ const CreatePoint = () => {
   const [selectedUF, setSelectedUF] = useState<string>('0');
   const [selectedCity, setSelectedCity] = useState<string>('0');
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
-  const [selectedPosition, setSelectedPosition] = useState<[number, number]>([
-    0,
-    0,
-  ]);
+  // prettier-ignore
+  const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
 
   const history = useHistory();
 
