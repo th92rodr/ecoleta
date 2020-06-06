@@ -1,11 +1,16 @@
 {
+  "name": "ecoleta_mobile",
+  "version": "1.0.0",
+  "author": "Thiago Rodrigues",
+  "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "format": "prettier --config .prettierrc.js --write '*/**/*.{js,ts,tsx}'"
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.1.0",
@@ -35,7 +40,7 @@
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.61.17",
     "babel-preset-expo": "~8.1.0",
+    "prettier": "^2.0.5",
     "typescript": "~3.8.3"
-  },
-  "private": true
+  }
 }
