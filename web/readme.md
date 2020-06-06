@@ -2,7 +2,7 @@
 
 ## Stack
 
-- `React.js`
+- <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React.js-blue.svg?logo=react" alt="React.js"></a>
 
 ## Run Application
 
