@@ -49,7 +49,7 @@ npm run knex:seed
 The server will be running on port `3333`.
 
 ```
-npm run dev
+npm start
 ```
 
 ### SPA App (Web Frontend)
