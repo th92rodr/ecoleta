@@ -2,8 +2,8 @@
 
 ## Stack
 
-- `Node.js` / `Express`
-- `SQLite`
+- <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-green.svg?logo=node.js" alt="Node.js"></a> / <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-green.svg?logo=node.js" alt="Express"></a>
+- <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/SQLite-003B57.svg?logo=SQLite" alt="SQLite"></a>
 
 ## Run Application
 
@@ -25,7 +25,7 @@ npm run knex:seed
 The server will be running on port `3333`.
 
 ```
-npm run dev
+npm start
 ```
 
 ## API Routes
