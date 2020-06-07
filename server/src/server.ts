@@ -15,5 +15,5 @@ app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 app.use(errors());
 
-const PORT = 3333;
+import { PORT } from './config/constants';
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`));
