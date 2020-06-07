@@ -1,17 +1,16 @@
 {
   "name": "ecoleta_web",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Thiago Rodrigues",
-  "license": "ISC",
-  "keywords": [],
-  "description": "",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --config .prettierrc.js --write '**/*.(js|ts)'",
-    "lint": "eslint '**/*.(js|ts)'"
+    "format": "prettier --config .prettierrc.js --write '*/**/*.{js,ts,tsx,html,css}'",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}'--fix"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -25,6 +24,7 @@
     "leaflet": "^1.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^11.0.1",
     "react-icons": "^3.10.0",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
@@ -34,8 +34,9 @@
   "devDependencies": {
     "@types/react-leaflet": "^2.5.1",
     "@types/react-router-dom": "^5.1.5",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
-    "eslint": "^7.1.0",
+    "eslint-plugin-react": "^7.20.0",
     "prettier": "^2.0.5"
   },
   "eslintConfig": {
