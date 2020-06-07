@@ -18,7 +18,7 @@ You can checkout the layout at [Figma](https://www.figma.com/file/1SxgOMojOB2zYT
 
 - API Server: <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-green.svg?logo=node.js" alt="Node.js"></a> / <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-green.svg?logo=node.js" alt="Express"></a>
 - SPA App (Web Frontend): <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React.js-blue.svg?logo=react" alt="React.js"></a>
-- Mobile App: <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/ReactNative-blue.svg?logo=react" alt="ReactNative"></a>
+- Mobile App: <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/ReactNative-blue.svg?logo=react" alt="ReactNative"></a> / <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/Expo-000020.svg?logo=expo" alt="Expo"></a>
 - Database: <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/SQLite-003B57.svg?logo=SQLite" alt="SQLite"></a>
 
 ## How To Run
@@ -93,3 +93,10 @@ npm i
 ```
 npm start
 ```
+
+- Expo Developer Tools.
+
+  - Expo Developer Tools will open up in the browser.
+  - Select `LAN` as connection type.
+  - Open the Expo mobile phone app.
+  - Scan the provided QR Code with the Expo app.
