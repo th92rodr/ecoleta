@@ -1,9 +1,9 @@
 # Ecoleta ♻️
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Thiago92Rodrigues/ecoleta?color=%237519C1">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Thiago92Rodrigues/ecoleta">
-  <img alt="License" src="https://img.shields.io/github/license/Thiago92Rodrigues/ecoleta?color=%237519C1">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/th92rodr/ecoleta?color=%237519C1">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/th92rodr/ecoleta">
+  <img alt="License" src="https://img.shields.io/github/license/th92rodr/ecoleta?color=%237519C1">
 </p>
 
 Web application to help people find proper collection points for recycling.
