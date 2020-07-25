@@ -1,10 +1,31 @@
-# Ecoleta ♻️
+<h1 align="center">Ecoleta ♻️</h1>
+
+<p align="center">Connecting recycling collection points with people who need to dispose their waste in an ecological way.</p>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/th92rodr/ecoleta?color=%237519C1">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/th92rodr/ecoleta">
-  <img alt="License" src="https://img.shields.io/github/license/th92rodr/ecoleta?color=%237519C1">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/th92rodr/ecoleta?color=7159c1">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/th92rodr/ecoleta?color=b24c63" />
+  <a href="https://github.com/th92rodr/ecoleta/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/th92rodr/ecoleta?color=3675d3" />
+  </a>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-fff?color=1A424F" />
+  <a href="https://github.com/th92rodr/ecoleta/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/th92rodr/ecoleta?style=social" />
+  </a>
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/repo status-Done-fff?style=flat&color=47A248" alt="Done - The project has been finalized." />
+</p>
+
+<p align="center">
+ <a href="#about">About</a> •
+ <a href="#tech-stack">Tech Stack</a> •
+ <a href="#how-it-works">How it works</a> •
+ <a href="#license">License</a>
+</p>
+
+## About
 
 Web application to help people find proper collection points for recycling.
 
@@ -12,29 +33,56 @@ It is a way to connect companies and entities that collect organic and inorganic
 
 This project was developed during the Next Level Week #01 offered by [Rocketseat](https://rocketseat.com.br/).
 
-You can checkout the layout at [Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta).
+You can check out the layout at [Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta).
 
-## Stack
+## Tech Stack
 
-- API Server: <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-green.svg?logo=node.js" alt="Node.js"></a> / <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-green.svg?logo=node.js" alt="Express"></a>
-- SPA App (Web Frontend): <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React.js-blue.svg?logo=react" alt="React.js"></a>
-- Mobile App: <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/ReactNative-blue.svg?logo=react" alt="ReactNative"></a> / <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/Expo-000020.svg?logo=expo" alt="Expo"></a>
-- Database: <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/SQLite-003B57.svg?logo=SQLite" alt="SQLite"></a>
+The following tools were used for building this project:
 
-## How To Run
+**API**
 
-### API Server
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SQLite](https://www.sqlite.org/)
 
-- Go to `server` directory:
+**Website**
 
-```
-cd server
-```
+- [React.js](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+**Mobile App**
+
+- [ReactNative](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Expo](https://expo.io/)
+
+---
+
+## How it works
+
+### Pre-requisites
+
+Before you begin, you will need to have the following tools installed on your machine:
+
+- `Node.js`<br />
+  recommend version 12.18
+
+  `Node` can be installed from `https://nodejs.org/en/`.
+
+- `NPM`:<br />
+  recommend version 6.14
+
+  Installing `Node` will also install `NPM` automatically.
+
+### Running the API
+
+Make sure you are inside the `server` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
 - Init the database (create tables and default records):
@@ -44,51 +92,43 @@ npm run knex:migrate
 npm run knex:seed
 ```
 
-- Start the server:
-
-The server will be running on port `3333`.
+- Start the API:
 
 ```
 npm start
 ```
 
-### SPA App (Web Frontend)
+The API will be running on PORT `3333`.
 
-- Go to `web` directory:
+### Running the Web App
 
-```
-cd web
-```
+Make sure you are inside the `web` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
-- Start app:
+- Start the APP:
+
+```
+npm start
+```
 
 The app will be running on port `3000`.
 
-```
-npm start
-```
+### Running the Mobile App
 
-### Mobile App
-
-- Go to `mobile` directory:
-
-```
-cd mobile
-```
+Make sure you are inside the `mobile` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
-- Start app:
+- Start the APP:
 
 ```
 npm start
@@ -100,3 +140,9 @@ npm start
   - Select `LAN` as connection type.
   - Open the Expo mobile phone app.
   - Scan the provided QR Code with the Expo app.
+
+---
+
+## License
+
+This project is under the license [MIT](./LICENSE).
