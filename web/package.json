@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --config .prettierrc.js --write '*/**/*.{js,ts,tsx,html,css}'",
+    "pretty": "prettier --config .prettierrc.js --write '*/**/*.{js,jsx,ts,tsx,html,css}'",
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{js,ts,tsx}'--fix"
   },

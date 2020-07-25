@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
 import { FiUpload } from 'react-icons/fi';
+import { useDropzone } from 'react-dropzone';
 
 import './style.css';
 
