@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Feather as Icon } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { RectButton } from 'react-native-gesture-handler';
 import {
   StyleSheet,
   Text,
@@ -9,9 +12,6 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { Feather as Icon } from '@expo/vector-icons';
-import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
   const navigation = useNavigation();
