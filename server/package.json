@@ -8,7 +8,7 @@
     "start": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
-    "format": "prettier --config .prettierrc.js --write '*/**/*.{js,ts}'",
+    "pretty": "prettier --config .prettierrc.js --write '*/**/*.{js,ts}'",
     "lint": "eslint '*/**/*.{js,ts}'",
     "lint:fix": "eslint '*/**/*.{js,ts}'--fix"
   },
