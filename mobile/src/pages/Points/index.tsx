@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
+import { SvgUri } from 'react-native-svg';
+import * as Location from 'expo-location';
 import { Feather as Icon } from '@expo/vector-icons';
+import MapView, { Marker } from 'react-native-maps';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import {
   StyleSheet,
@@ -11,9 +14,6 @@ import {
   Image,
   Alert,
 } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import { SvgUri } from 'react-native-svg';
-import * as Location from 'expo-location';
 
 import API from '../../services/api';
 
@@ -53,7 +53,10 @@ const Points = () => {
     async function loadPosition() {
       const { status } = await Location.requestPermissionsAsync();
       if (status !== 'granted') {
-        Alert.alert('', '');
+        Alert.alert(
+          'Oops!',
+          'Precisamos da sua permissão para obter a localização.',
+        );
         return;
       }
 

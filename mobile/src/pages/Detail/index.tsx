@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import * as MailComposer from 'expo-mail-composer';
+import { RectButton } from 'react-native-gesture-handler';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
 import {
   TouchableOpacity,
   StyleSheet,
@@ -8,10 +12,6 @@ import {
   SafeAreaView,
   Linking,
 } from 'react-native';
-import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
-import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import * as MailComposer from 'expo-mail-composer';
 
 import API from '../../services/api';
 
@@ -53,7 +53,7 @@ const Detail = () => {
 
   function handleComposeMail() {
     MailComposer.composeAsync({
-      subject: 'Interesse na coleta de residuos',
+      subject: 'Interesse na coleta de resíduos',
       recipients: [data.point.email],
     });
   }
