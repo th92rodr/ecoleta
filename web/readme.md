@@ -1,24 +1,43 @@
-# Ecoleta SPA App (Web Frontend)
+# Ecoleta Web App
 
-## Stack
+## Tech Stack
 
-- <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React.js-blue.svg?logo=react" alt="React.js"></a>
+The following tools were used for building this project:
 
-## Run Application
+- [React.js](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Pre-requisites
+
+Before you begin, you will need to have the following tools installed on your machine:
+
+- `Node.js`<br />
+  recommend version 12.18
+
+  `Node` can be installed from `https://nodejs.org/en/`.
+
+- `NPM`:<br />
+  recommend version 6.14
+
+  Installing `Node` will also install `NPM` automatically.
+
+## Running the Web App
+
+Make sure you are inside the `web` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
-- Start app:
-
-The app will be running on port `3000`.
+- Start the APP:
 
 ```
 npm start
 ```
+
+The app will be running on port `3000`.
 
 ## App Routes
 
