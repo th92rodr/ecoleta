@@ -1,18 +1,38 @@
 # Ecoleta Mobile App
 
-## Stack
+## Tech Stack
 
-- <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/ReactNative-blue.svg?logo=react" alt="ReactNative"></a>
+The following tools were used for building this project:
 
-## Run Application
+- [ReactNative](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Expo](https://expo.io/)
+
+## Pre-requisites
+
+Before you begin, you will need to have the following tools installed on your machine:
+
+- `Node.js`<br />
+  recommend version 12.18
+
+  `Node` can be installed from `https://nodejs.org/en/`.
+
+- `NPM`:<br />
+  recommend version 6.14
+
+  Installing `Node` will also install `NPM` automatically.
+
+## Running the Mobile App
+
+Make sure you are inside the `mobile` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
-- Start app:
+- Start the APP:
 
 ```
 npm start
