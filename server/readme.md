@@ -1,16 +1,36 @@
 # Ecoleta API Server
 
-## Stack
+## Tech Stack
 
-- <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-green.svg?logo=node.js" alt="Node.js"></a> / <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-green.svg?logo=node.js" alt="Express"></a>
-- <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/SQLite-003B57.svg?logo=SQLite" alt="SQLite"></a>
+The following tools were used for building this project:
 
-## Run Application
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SQLite](https://www.sqlite.org/)
+
+## Pre-requisites
+
+Before you begin, you will need to have the following tools installed on your machine:
+
+- `Node.js`<br />
+  recommend version 12.18
+
+  `Node` can be installed from `https://nodejs.org/en/`.
+
+- `NPM`:<br />
+  recommend version 6.14
+
+  Installing `Node` will also install `NPM` automatically.
+
+## Running the API
+
+Make sure you are inside the `server` folder, then follow these steps:
 
 - Install project dependencies:
 
 ```
-npm i
+npm install
 ```
 
 - Init the database (create tables and default records):
@@ -20,15 +40,15 @@ npm run knex:migrate
 npm run knex:seed
 ```
 
-- Start the server:
-
-The server will be running on port `3333`.
+- Start the API:
 
 ```
 npm start
 ```
 
-## API Routes
+The API will be running on PORT `3333`.
+
+## API Endpoints
 
 - GET on `/items`:
 
