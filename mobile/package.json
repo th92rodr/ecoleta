@@ -10,7 +10,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "pretty": "prettier --config .prettierrc.js --write '*/**/*.{js,jsx,ts,tsx}'"
+    "pretty": "prettier --config .prettierrc.json --write '*/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.1.0",

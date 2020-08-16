@@ -21,6 +21,7 @@
 <p align="center">
  <a href="#about">About</a> •
  <a href="#tech-stack">Tech Stack</a> •
+ <a href="#layout">Layout</a> •
  <a href="#how-it-works">How it works</a> •
  <a href="#license">License</a>
 </p>
@@ -32,8 +33,6 @@ Web application to help people find proper collection points for recycling.
 It is a way to connect companies and entities that collect organic and inorganic waste to people who need to dispose their waste in an ecological way.
 
 This project was developed during the Next Level Week #01 offered by [Rocketseat](https://rocketseat.com.br/).
-
-You can check out the layout at [Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta).
 
 ## Tech Stack
 
@@ -56,6 +55,10 @@ The following tools were used for building this project:
 - [ReactNative](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Expo](https://expo.io/)
+
+## Layout
+
+You can check the layout at [Figma](https://www.figma.com/file/SUfeECLcCBzH45XWjXAhYc/Ecoleta?node-id=0%3A1).
 
 ---
 
@@ -81,20 +84,20 @@ Make sure you are inside the `server` folder, then follow these steps:
 
 - Install project dependencies:
 
-```
+```sh
 npm install
 ```
 
 - Init the database (create tables and default records):
 
-```
+```sh
 npm run knex:migrate
 npm run knex:seed
 ```
 
 - Start the API:
 
-```
+```sh
 npm start
 ```
 
@@ -106,13 +109,13 @@ Make sure you are inside the `web` folder, then follow these steps:
 
 - Install project dependencies:
 
-```
+```sh
 npm install
 ```
 
 - Start the APP:
 
-```
+```sh
 npm start
 ```
 
@@ -124,13 +127,13 @@ Make sure you are inside the `mobile` folder, then follow these steps:
 
 - Install project dependencies:
 
-```
+```sh
 npm install
 ```
 
 - Start the APP:
 
-```
+```sh
 npm start
 ```
 
