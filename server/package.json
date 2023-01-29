@@ -15,15 +15,9 @@
   "dependencies": {
     "celebrate": "^12.2.0",
     "cors": "^2.8.5",
-<<<<<<< HEAD
     "express": "^4.18.2",
-    "knex": "^0.21.17",
-    "multer": "^1.4.5-lts.1",
-=======
-    "express": "^4.17.1",
     "knex": "^2.4.0",
-    "multer": "^1.4.2",
->>>>>>> ea4ec421b42f0dbc5cba304fde2ccd088bc79afd
+    "multer": "^1.4.5-lts.1",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
