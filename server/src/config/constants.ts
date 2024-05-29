@@ -1,5 +1,5 @@
 const API = {
-  URL: '192.168.10.16',
+  URL: 'localhost',
   PORT: 3333,
 };
 
