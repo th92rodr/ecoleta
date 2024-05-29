@@ -4,16 +4,16 @@ import knex from '../database/connection';
 import { URL, PORT } from '../config/constants';
 
 class ItemsController {
-  async index(req: Request, res: Response) {
+  async index(request: Request, response: Response) {
     const items = await knex('items').select('*');
     const serializedItems = items.map(item => {
       return {
         id: item.id,
         title: item.title,
-        imageURL: `http://${URL}:${PORT}/uploads/${item.image}`,
+        image_url: `http://${URL}:${PORT}/uploads/${item.image}`,
       };
     });
-    return res.json(serializedItems);
+    return response.json(serializedItems);
   }
 }
 

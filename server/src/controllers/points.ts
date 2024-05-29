@@ -4,8 +4,8 @@ import knex from '../database/connection';
 import { URL, PORT } from '../config/constants';
 
 class PointsController {
-  async index(req: Request, res: Response) {
-    const { city, uf, items } = req.query;
+  async index(request: Request, response: Response) {
+    const { city, uf, items } = request.query;
 
     const itemsArray = String(items)
       .split(',')
@@ -22,20 +22,20 @@ class PointsController {
     const serializedPoints = points.map(point => {
       return {
         ...point,
-        imageURL: `http://${URL}:${PORT}/uploads/${point.image}`,
+        image_url: `http://${URL}:${PORT}/uploads/${point.image}`,
       };
     });
 
-    return res.status(200).json(serializedPoints);
+    return response.status(200).json(serializedPoints);
   }
 
-  async show(req: Request, res: Response) {
-    const { id } = req.params;
+  async show(request: Request, response: Response) {
+    const { id } = request.params;
 
     const point = await knex('points').where('id', id).first();
 
     if (!point) {
-      return res.status(400).json({ message: 'Point not found' });
+      return response.status(404).json({ message: 'Point not found' });
     }
 
     /**
@@ -50,13 +50,13 @@ class PointsController {
 
     const serializedPoint = {
       ...point,
-      imageURL: `http://${URL}:${PORT}/uploads/${point.image}`,
+      image_url: `http://${URL}:${PORT}/uploads/${point.image}`,
     };
 
-    return res.status(200).json({ point: serializedPoint, items });
+    return response.status(200).json({ point: serializedPoint, items });
   }
 
-  async create(req: Request, res: Response) {
+  async create(request: Request, response: Response) {
     const {
       name,
       email,
@@ -66,10 +66,10 @@ class PointsController {
       city,
       uf,
       items,
-    } = req.body;
+    } = request.body;
 
     const point = {
-      image: req.file.filename,
+      image: request.file.filename,
       name,
       email,
       whatsapp,
@@ -99,7 +99,7 @@ class PointsController {
 
     await trx.commit();
 
-    return res.json({
+    return response.json({
       id: pointId,
       ...point,
     });
