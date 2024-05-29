@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { FiUpload } from 'react-icons/fi';
 import { useDropzone } from 'react-dropzone';
+import { FiUpload } from 'react-icons/fi';
 
 import './style.css';
 
@@ -9,17 +9,14 @@ interface Props {
 }
 
 const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
-  const [selectedFileURL, setSelectedFileURL] = useState('');
+  const [selectedFileUrl, setSelectedFileUrl] = useState('');
 
-  const onDrop = useCallback(
-    acceptedFiles => {
-      const file = acceptedFiles[0];
-      const fileURL = URL.createObjectURL(file);
-      setSelectedFileURL(fileURL);
-      onFileUploaded(file);
-    },
-    [onFileUploaded],
-  );
+  const onDrop = useCallback(acceptedFiles => {
+    const file = acceptedFiles[0];
+    const fileUrl = URL.createObjectURL(file);
+    setSelectedFileUrl(fileUrl);
+    onFileUploaded(file);
+  }, [onFileUploaded]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -29,8 +26,8 @@ const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
   return (
     <div className='dropzone' {...getRootProps()}>
       <input {...getInputProps()} accept='image/*' />
-      {selectedFileURL ? (
-        <img src={selectedFileURL} alt='Point Thumbnail' />
+      {selectedFileUrl ? (
+        <img src={selectedFileUrl} alt='Point Thumbnail' />
       ) : (
         <p>
           <FiUpload />

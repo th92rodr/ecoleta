@@ -1,21 +1,20 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import axios from 'axios';
-import { FiArrowLeft } from 'react-icons/fi';
-import { LeafletMouseEvent } from 'leaflet';
 import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
+import { LeafletMouseEvent } from 'leaflet';
+import axios from 'axios';
 
+import API from '../../services/api';
 import Dropzone from '../../components/Dropzone';
 
 import './style.css';
 import logo from '../../assets/logo.svg';
 
-import API from '../../services/api';
-
 interface Item {
   id: number;
   title: string;
-  imageURL: string;
+  image_url: string;
 }
 
 interface IBGEUFResponse {
@@ -31,7 +30,6 @@ const CreatePoint = () => {
   const [UFs, setUFs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
 
-  // prettier-ignore
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
 
   const [formData, setFormData] = useState({
@@ -43,7 +41,6 @@ const CreatePoint = () => {
   const [selectedUF, setSelectedUF] = useState<string>('0');
   const [selectedCity, setSelectedCity] = useState<string>('0');
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
-  // prettier-ignore
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
   const [selectedFile, setSelectedFile] = useState<File>();
 
@@ -63,10 +60,7 @@ const CreatePoint = () => {
   }, []);
 
   useEffect(() => {
-    axios
-      .get<IBGEUFResponse[]>(
-        'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
-      )
+    axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
       .then(response => {
         const UFInitials = response.data.map(uf => uf.sigla);
         setUFs(UFInitials);
@@ -78,10 +72,7 @@ const CreatePoint = () => {
       return;
     }
 
-    axios
-      .get<IBGECityResponse[]>(
-        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/municipios`,
-      )
+    axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/municipios`)
       .then(response => {
         const cities = response.data.map(city => city.nome);
         setCities(cities);
@@ -137,7 +128,9 @@ const CreatePoint = () => {
     data.append('longitude', String(longitude));
     data.append('items', items.join(','));
 
-    if (selectedFile) data.append('image', selectedFile);
+    if (selectedFile) {
+      data.append('image', selectedFile);
+    }
 
     await API.post('/points', data);
 
@@ -155,16 +148,14 @@ const CreatePoint = () => {
       </header>
 
       <form onSubmit={handleSubmit}>
-        <h1>
-          Cadastro do <br /> ponto de coleta
-        </h1>
+        <h1>Cadastro do <br /> ponto de coleta</h1>
 
         <Dropzone onFileUploaded={setSelectedFile} />
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Dados</h2>
-          </legend>
+          </header>
 
           <div className='field'>
             <label htmlFor='name'>Nome da entidade</label>
@@ -199,10 +190,10 @@ const CreatePoint = () => {
         </fieldset>
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Endereço</h2>
             <span>Selecione o endereço no mapa</span>
-          </legend>
+          </header>
 
           <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
             <TileLayer
@@ -223,9 +214,7 @@ const CreatePoint = () => {
               >
                 <option value='0'>Selecione uma UF</option>
                 {UFs.map(uf => (
-                  <option key={uf} value={uf}>
-                    {uf}
-                  </option>
+                  <option key={uf} value={uf}>{uf}</option>
                 ))}
               </select>
             </div>
@@ -239,9 +228,7 @@ const CreatePoint = () => {
               >
                 <option value='0'>Selecione uma cidade</option>
                 {cities.map(city => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
+                  <option key={city} value={city}>{city}</option>
                 ))}
               </select>
             </div>
@@ -249,10 +236,10 @@ const CreatePoint = () => {
         </fieldset>
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Itens de coleta</h2>
             <span>Selecione um ou mais itens abaixo</span>
-          </legend>
+          </header>
 
           <ul className='items-grid'>
             {items.map(item => (
@@ -261,7 +248,7 @@ const CreatePoint = () => {
                 onClick={() => handleSelectItem(item.id)}
                 className={selectedItems.includes(item.id) ? 'selected' : ''}
               >
-                <img src={item.imageURL} alt={item.title} />
+                <img src={item.image_url} alt={item.title} />
                 <span>{item.title}</span>
               </li>
             ))}
