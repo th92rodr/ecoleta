@@ -1,0 +1,196 @@
+_type: export
+__export_format: 4
+__export_date: 2024-05-29T04:21:56.376Z
+__export_source: insomnia.desktop.app:v2020.2.2
+resources:
+  - _id: req_4d09bf4ed4ad46e19c45c4e7c09db45c
+    authentication: {}
+    body: {}
+    created: 1716850842464
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1716850842464
+    method: GET
+    modified: 1716956460865
+    name: Get Collection Point by id
+    parameters: []
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{baseurl}}/points/2"
+    _type: request
+  - _id: wrk_272559e95116452a8d451bf7deb9a12b
+    created: 1716845016389
+    description: ""
+    modified: 1716845016389
+    name: Ecoleta API
+    parentId: null
+    scope: null
+    _type: workspace
+  - _id: req_5c6fe05b793e45d2901c2b49725b6e47
+    authentication: {}
+    body: {}
+    created: 1716851075647
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1716850418602.5
+    method: GET
+    modified: 1716956476409
+    name: Get Collection Points by city, uf and items
+    parameters:
+      - description: ""
+        disabled: false
+        id: pair_c23fd06119df408f8520436907acb4f6
+        name: city
+        value: city
+      - description: ""
+        disabled: false
+        id: pair_de84b825fb4645469161c31b1d8c8590
+        name: uf
+        value: uf
+      - description: ""
+        disabled: false
+        id: pair_322dba46da2044ce80e31d5b60e3e98e
+        name: items
+        value: "6"
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{baseurl}}/points"
+    _type: request
+  - _id: req_3d57fdaeb0b345698ae2bfd0eeb90df8
+    authentication: {}
+    body:
+      mimeType: multipart/form-data
+      params:
+        - description: ""
+          id: pair_e5cc218b8bfa407ca2d7511835dadcbe
+          name: name
+          value: market
+        - description: ""
+          id: pair_0a899a5e427b422eac7b4831d9d9fc65
+          name: email
+          value: market@mail.com
+        - description: ""
+          id: pair_2e8a78c163534043b7890d78b3c2ded9
+          name: whatsapp
+          value: 555 555 555
+        - description: ""
+          id: pair_7bcf6aa7de6b40bb9167f13d9d7c97b7
+          name: latitude
+          value: "123.45"
+        - description: ""
+          id: pair_d8931fc811aa4fa7bc22666b99bc12e1
+          name: longitude
+          value: "567.89"
+        - description: ""
+          id: pair_fcfa5cfc6b504561a3c7cba81f06c458
+          name: city
+          value: city
+        - description: ""
+          id: pair_0cb7d5dd52ab4be08fd7eb6ce77b1b97
+          name: uf
+          value: uf
+        - description: ""
+          id: pair_217e7326581842a788f7ad381672d79a
+          name: items
+          value: 1,4,5
+        - description: ""
+          disabled: false
+          fileName: /home/thiago/Pictures/market.png
+          id: pair_6a6e0ada100d4639a0a6d0eb8310262f
+          name: image
+          type: file
+          value: ""
+    created: 1716849994741
+    description: ""
+    headers:
+      - id: pair_0a915673103e4791bbe96819bbcfe04e
+        name: Content-Type
+        value: multipart/form-data
+    isPrivate: false
+    metaSortKey: -1716849994741
+    method: POST
+    modified: 1716956381340
+    name: Create Collect Point
+    parameters: []
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{baseurl}}/points"
+    _type: request
+  - _id: req_8b936e9b7ba1494e9d92767e90bfea2a
+    authentication: {}
+    body: {}
+    created: 1716849352914
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1716849352915
+    method: GET
+    modified: 1716849360318
+    name: List Items
+    parameters: []
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{baseurl}}/items"
+    _type: request
+  - _id: env_92e8296ba4e0d313927680cd8124fb924fef97cd
+    color: null
+    created: 1716845016448
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1716845016448
+    modified: 1716845016448
+    name: Base Environment
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    _type: environment
+  - _id: jar_92e8296ba4e0d313927680cd8124fb924fef97cd
+    cookies: []
+    created: 1716845016450
+    modified: 1716845016450
+    name: Default Jar
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    _type: cookie_jar
+  - _id: spc_ea1a342c87494d2981669929010e6cbc
+    contentType: yaml
+    contents: ""
+    created: 1716845016400
+    fileName: Ecoleta API
+    modified: 1716845016400
+    parentId: wrk_272559e95116452a8d451bf7deb9a12b
+    _type: api_spec
+  - _id: env_3e0b225315054547addc04fce70978dd
+    color: "#7d69cb"
+    created: 1716907113972
+    data:
+      baseurl: localhost:3333
+    dataPropertyOrder:
+      "&":
+        - baseurl
+    isPrivate: false
+    metaSortKey: 1716907113972
+    modified: 1716907132953
+    name: local env
+    parentId: env_92e8296ba4e0d313927680cd8124fb924fef97cd
+    _type: environment
