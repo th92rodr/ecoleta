@@ -3,26 +3,18 @@ import * as MailComposer from 'expo-mail-composer';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
-import {
-  TouchableOpacity,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-  Linking,
-} from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, Image, SafeAreaView, Linking } from 'react-native';
 
 import API from '../../services/api';
 
 interface Params {
-  pointId: number;
+  point_id: number;
 }
 
 interface Data {
   point: {
     image: string;
-    imageURL: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -42,7 +34,7 @@ const Detail = () => {
   const [data, setData] = useState<Data>({} as Data);
 
   useEffect(() => {
-    API.get(`/points/${routeParams.pointId}`).then(response => {
+    API.get(`/points/${routeParams.point_id}`).then(response => {
       setData(response.data);
     });
   }, []);
@@ -59,9 +51,7 @@ const Detail = () => {
   }
 
   function handleWhatsapp() {
-    Linking.openURL(
-      `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de residuos.`,
-    );
+    Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de residuos.`);
   }
 
   if (!data.point) {
@@ -75,10 +65,7 @@ const Detail = () => {
           <Icon name='arrow-left' size={20} color='#34cb79' />
         </TouchableOpacity>
 
-        <Image
-          style={styles.pointImage}
-          source={{ uri: data.point.imageURL }}
-        />
+        <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
 
         <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>
@@ -87,9 +74,7 @@ const Detail = () => {
 
         <View style={styles.address}>
           <Text style={styles.addressTitle}>Endereço:</Text>
-          <Text style={styles.addressContent}>
-            {data.point.city}, {data.point.uf}
-          </Text>
+          <Text style={styles.addressContent}>{data.point.city}, {data.point.uf}</Text>
         </View>
       </View>
 

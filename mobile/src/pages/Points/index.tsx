@@ -5,29 +5,21 @@ import * as Location from 'expo-location';
 import { Feather as Icon } from '@expo/vector-icons';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  Alert,
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
 
 import API from '../../services/api';
 
 interface Item {
   id: number;
   title: string;
-  imageURL: string;
+  image_url: string;
 }
 
 interface Point {
   id: number;
   name: string;
   image: string;
-  imageURL: string;
+  image_url: string;
   latitude: number;
   longitude: number;
 }
@@ -42,7 +34,6 @@ const Points = () => {
   const route = useRoute();
   const routeParams = route.params as Params;
 
-  // prettier-ignore
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0,]);
 
   const [items, setItems] = useState<Item[]>([]);
@@ -53,10 +44,7 @@ const Points = () => {
     async function loadPosition() {
       const { status } = await Location.requestPermissionsAsync();
       if (status !== 'granted') {
-        Alert.alert(
-          'Oops!',
-          'Precisamos da sua permissão para obter a localização.',
-        );
+        Alert.alert('Oooops...', 'Precisamos de sua permissão para obter a localização.');
         return;
       }
 
@@ -92,7 +80,7 @@ const Points = () => {
   }
 
   function handleNavigateToDetail(id: number) {
-    navigation.navigate('Detail', { pointId: id });
+    navigation.navigate('Detail', { point_id: id });
   }
 
   function handleSelectItem(id: number) {
@@ -111,10 +99,9 @@ const Points = () => {
         <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name='arrow-left' size={20} color='#34cb79' />
         </TouchableOpacity>
+
         <Text style={styles.title}>Bem vindo.</Text>
-        <Text style={styles.description}>
-          Encontre no mapa um ponto de coleta.
-        </Text>
+        <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
 
         <View style={styles.mapContainer}>
           {initialPosition[0] !== 0 && (
@@ -127,7 +114,7 @@ const Points = () => {
                 longitudeDelta: 0.014,
               }}
             >
-              {points.map(point => (
+              {selectedItems[0] !== undefined && (points.map(point => (
                 <Marker
                   key={String(point.id)}
                   style={styles.mapMarker}
@@ -138,22 +125,20 @@ const Points = () => {
                   }}
                 >
                   <View style={styles.mapMarkerContainer}>
-                    <Image
-                      style={styles.mapMarkerImage}
-                      source={{ uri: point.imageURL }}
-                    />
+                    <Image style={styles.mapMarkerImage} source={{ uri: point.image_url }} />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                   </View>
                 </Marker>
-              ))}
+              )))}
             </MapView>
           )}
         </View>
       </View>
+
       <View style={styles.itemsContainer}>
         <ScrollView
           horizontal
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ paddingHorizontal: 20 }}
         >
           {items.map(item => (
@@ -166,7 +151,7 @@ const Points = () => {
               activeOpacity={0.6}
               onPress={() => handleSelectItem(item.id)}
             >
-              <SvgUri width={42} height={42} uri={item.imageURL} />
+              <SvgUri width={42} height={42} uri={item.image_url} />
               <Text style={styles.itemTitle}>{item.title}</Text>
             </TouchableOpacity>
           ))}
@@ -257,7 +242,6 @@ const styles = StyleSheet.create({
     marginRight: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
-
     textAlign: 'center',
   },
 

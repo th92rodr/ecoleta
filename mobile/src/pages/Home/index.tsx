@@ -2,16 +2,7 @@ import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  TextInput,
-  KeyboardAvoidingView,
-  Platform,
-} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -39,13 +30,8 @@ const Home = () => {
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
           <View>
-            <Text style={styles.title}>
-              Seu marketplace de coleta de resíduos.
-            </Text>
-            <Text style={styles.description}>
-              Ajudamos pessoas a encontrarem pontos de coleta de forma
-              eficiente.
-            </Text>
+            <Text style={styles.title}>Seu marketplace de coleta de resíduos.</Text>
+            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</Text>
           </View>
         </View>
 
@@ -136,6 +122,8 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
